@@ -225,13 +225,16 @@ jobs:
           echo "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
           echo ""
 
-  deploy:
+    deploy:
 
     needs: continuous-feedback
 
     runs-on: ubuntu-latest
 
     steps:
+
+      - name: Snyk Security Scan
+        run: echo "Ejecutando analisis de seguridad Snyk"
 
       - name: Simular deploy automático
         run: |
