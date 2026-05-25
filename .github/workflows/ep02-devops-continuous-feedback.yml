@@ -234,7 +234,8 @@ jobs:
     steps:
 
       - name: Snyk Security Scan
-        run: echo "Ejecutando analisis de seguridad Snyk"
+        run: |
+          echo "Ejecutando analisis de seguridad Snyk"
 
       - name: Simular deploy automático
         run: |
