@@ -13,7 +13,6 @@ Las siguientes mejoras ayudarán a incrementar la madurez DevOps del repositorio
 ## Roadmap sugerido para alcanzar el 100%
 
 1. SonarCloud/Snyk
-2. Deploy automático
 
 ---
 
@@ -80,7 +79,7 @@ Impacto: No existe análisis automatizado seguridad.
 | IE2 | Pipeline ejecuta tests | ✅ IMPLEMENTADO |
 | IE3 | SonarCloud/Snyk | ⚠️ MEJORA PENDIENTE |
 | IE3 | Bloqueos seguridad needs | ✅ IMPLEMENTADO |
-| IE4 | Deploy automático | ⚠️ MEJORA PENDIENTE |
+| IE4 | Deploy automático | ✅ IMPLEMENTADO |
 | IE2 | Tecnología detectada | ✅ IMPLEMENTADO |
 | IE2 | Coverage equivalente JaCoCo | ✅ IMPLEMENTADO |
 | IE3 | Dependabot configurado | ✅ IMPLEMENTADO |
@@ -190,15 +189,13 @@ Workflow revisado
 
 ### IE4 - Deploy automático
 
-- Estado: ⚠️ MEJORA PENDIENTE
-- Detalle: No tiene deploy
+- Estado: ✅ IMPLEMENTADO
+- Detalle: Tiene deploy
 
 - Evidencia:
 ```
 Workflow revisado
 ```
-
-- Qué falta: Agregar deploy automático
 
 
 ### IE2 - Tecnología detectada
