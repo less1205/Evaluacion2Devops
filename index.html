@@ -61,7 +61,6 @@ pre {
 <p>Las siguientes mejoras ayudarán a incrementar la madurez DevOps del repositorio.</p>
 <h3>🟠 Prioridad media</h3>
 <ul>
-<li>Multi-stage build</li>
 <li>SonarCloud/Snyk</li>
 <li>Coverage equivalente JaCoCo</li>
 </ul>
@@ -73,8 +72,6 @@ pre {
 <hr>
 <h2>Roadmap sugerido para alcanzar el 100%</h2>
 <ol>
-<li>Multi-stage build</li>
-<li>Imágenes optimizadas</li>
 <li>SonarCloud/Snyk</li>
 <li>Bloqueos seguridad needs</li>
 <li>Deploy automático</li>
@@ -87,29 +84,6 @@ pre {
 </ol>
 <hr>
 <h2>Cómo resolver los GAPs</h2>
-<h3>Multi-stage build</h3>
-<p>Impacto: La imagen Docker puede ser demasiado pesada.</p>
-<h4>Cómo resolver</h4>
-<ul>
-<li>Separar etapa build/runtime</li>
-<li>Usar FROM ... AS build</li>
-</ul>
-<h4>Ejemplo</h4>
-<pre><code>
-FROM node:20 AS build
-
-WORKDIR /app
-
-COPY . .
-
-RUN npm install
-
-RUN npm run build
-
-FROM nginx:alpine
-
-COPY --from=build /app/dist /usr/share/nginx/html
-</code></pre>
 <h3>SonarCloud/Snyk</h3>
 <p>Impacto: No existe análisis automatizado seguridad.</p>
 <h4>Cómo resolver</h4>
@@ -265,12 +239,12 @@ deploy:
 <tr>
 <td>IE1</td>
 <td>Multi-stage build</td>
-<td>⚠️ MEJORA PENDIENTE</td>
+<td>✅ IMPLEMENTADO</td>
 </tr>
 <tr>
 <td>IE1</td>
 <td>Imágenes optimizadas</td>
-<td>⚠️ MEJORA PENDIENTE</td>
+<td>✅ IMPLEMENTADO</td>
 </tr>
 <tr>
 <td>IE1</td>
@@ -373,32 +347,26 @@ deploy:
 </code></pre>
 <h3>IE1 - Multi-stage build</h3>
 <ul>
-<li><p>Estado: ⚠️ MEJORA PENDIENTE</p>
+<li><p>Estado: ✅ IMPLEMENTADO</p>
 </li>
-<li><p>Detalle: No usa multi-stage</p>
+<li><p>Detalle: Usa multi-stage</p>
 </li>
 <li><p>Evidencia:</p>
 </li>
 </ul>
 <pre><code>Dockerfile revisado
 </code></pre>
-<ul>
-<li>Qué falta: Agregar multi-stage</li>
-</ul>
 <h3>IE1 - Imágenes optimizadas</h3>
 <ul>
-<li><p>Estado: ⚠️ MEJORA PENDIENTE</p>
+<li><p>Estado: ✅ IMPLEMENTADO</p>
 </li>
-<li><p>Detalle: No usa imágenes optimizadas</p>
+<li><p>Detalle: Usa imágenes optimizadas</p>
 </li>
 <li><p>Evidencia:</p>
 </li>
 </ul>
 <pre><code>Dockerfile revisado
 </code></pre>
-<ul>
-<li>Qué falta: Usar alpine/slim/distroless</li>
-</ul>
 <h3>IE1 - Docker build funciona</h3>
 <ul>
 <li><p>Estado: ✅ IMPLEMENTADO</p>

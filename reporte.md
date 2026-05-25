@@ -6,7 +6,6 @@ Las siguientes mejoras ayudarán a incrementar la madurez DevOps del repositorio
 
 ### 🟠 Prioridad media
 
-- Multi-stage build
 - SonarCloud/Snyk
 - Coverage equivalente JaCoCo
 
@@ -19,50 +18,19 @@ Las siguientes mejoras ayudarán a incrementar la madurez DevOps del repositorio
 
 ## Roadmap sugerido para alcanzar el 100%
 
-1. Multi-stage build
-2. Imágenes optimizadas
-3. SonarCloud/Snyk
-4. Bloqueos seguridad needs
-5. Deploy automático
-6. Coverage equivalente JaCoCo
-7. Dependabot configurado
-8. Healthchecks
-9. Networks
-10. Limits CPU/MEM
-11. Reservations CPU/MEM
+1. SonarCloud/Snyk
+2. Bloqueos seguridad needs
+3. Deploy automático
+4. Coverage equivalente JaCoCo
+5. Dependabot configurado
+6. Healthchecks
+7. Networks
+8. Limits CPU/MEM
+9. Reservations CPU/MEM
 
 ---
 
 ## Cómo resolver los GAPs
-
-### Multi-stage build
-
-Impacto: La imagen Docker puede ser demasiado pesada.
-
-#### Cómo resolver
-
-- Separar etapa build/runtime
-- Usar FROM ... AS build
-
-#### Ejemplo
-
-```
-
-FROM node:20 AS build
-
-WORKDIR /app
-
-COPY . .
-
-RUN npm install
-
-RUN npm run build
-
-FROM nginx:alpine
-
-COPY --from=build /app/dist /usr/share/nginx/html
-
-```
 
 ### SonarCloud/Snyk
 
@@ -175,8 +143,8 @@ deploy:
 | IE | Evaluación | Estado |
 |---|---|---|
 | IE1 | Dockerfile existe | ✅ IMPLEMENTADO |
-| IE1 | Multi-stage build | ⚠️ MEJORA PENDIENTE |
-| IE1 | Imágenes optimizadas | ⚠️ MEJORA PENDIENTE |
+| IE1 | Multi-stage build | ✅ IMPLEMENTADO |
+| IE1 | Imágenes optimizadas | ✅ IMPLEMENTADO |
 | IE1 | Docker build funciona | ✅ IMPLEMENTADO |
 | IE4 | Pipeline GitHub Actions | ✅ IMPLEMENTADO |
 | IE2 | Pipeline ejecuta tests | ✅ IMPLEMENTADO |
@@ -213,28 +181,24 @@ Dockerfile
 
 ### IE1 - Multi-stage build
 
-- Estado: ⚠️ MEJORA PENDIENTE
-- Detalle: No usa multi-stage
+- Estado: ✅ IMPLEMENTADO
+- Detalle: Usa multi-stage
 
 - Evidencia:
 ```
 Dockerfile revisado
 ```
-
-- Qué falta: Agregar multi-stage
 
 
 ### IE1 - Imágenes optimizadas
 
-- Estado: ⚠️ MEJORA PENDIENTE
-- Detalle: No usa imágenes optimizadas
+- Estado: ✅ IMPLEMENTADO
+- Detalle: Usa imágenes optimizadas
 
 - Evidencia:
 ```
 Dockerfile revisado
 ```
-
-- Qué falta: Usar alpine/slim/distroless
 
 
 ### IE1 - Docker build funciona
