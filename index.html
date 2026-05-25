@@ -64,11 +64,6 @@ pre {
 <li>SonarCloud/Snyk</li>
 <li>Coverage equivalente JaCoCo</li>
 </ul>
-<h3>🟢 Mejora avanzada</h3>
-<ul>
-<li>Limits CPU/MEM</li>
-<li>Reservations CPU/MEM</li>
-</ul>
 <hr>
 <h2>Roadmap sugerido para alcanzar el 100%</h2>
 <ol>
@@ -77,10 +72,6 @@ pre {
 <li>Deploy automático</li>
 <li>Coverage equivalente JaCoCo</li>
 <li>Dependabot configurado</li>
-<li>Healthchecks</li>
-<li>Networks</li>
-<li>Limits CPU/MEM</li>
-<li>Reservations CPU/MEM</li>
 </ol>
 <hr>
 <h2>Cómo resolver los GAPs</h2>
@@ -106,34 +97,6 @@ pre {
 <h4>Ejemplo</h4>
 <pre><code>
 npm test -- --coverage
-</code></pre>
-<h3>Limits CPU/MEM</h3>
-<p>Impacto: No existen límites recursos.</p>
-<h4>Cómo resolver</h4>
-<ul>
-<li>Agregar deploy.resources.limits</li>
-</ul>
-<h4>Ejemplo</h4>
-<pre><code>
-deploy:
-  resources:
-    limits:
-      cpus: &#39;0.50&#39;
-      memory: 512M
-</code></pre>
-<h3>Reservations CPU/MEM</h3>
-<p>Impacto: No existen reservas recursos.</p>
-<h4>Cómo resolver</h4>
-<ul>
-<li>Agregar reservations</li>
-</ul>
-<h4>Ejemplo</h4>
-<pre><code>
-deploy:
-  resources:
-    reservations:
-      cpus: &#39;0.25&#39;
-      memory: 256M
 </code></pre>
 <hr>
 <h2>Tabla evaluación</h2>
@@ -304,7 +267,7 @@ deploy:
 <tr>
 <td>IE5</td>
 <td>Healthchecks</td>
-<td>⚠️ MEJORA PENDIENTE</td>
+<td>✅ IMPLEMENTADO</td>
 </tr>
 <tr>
 <td>IE5</td>
@@ -314,17 +277,17 @@ deploy:
 <tr>
 <td>IE5</td>
 <td>Networks</td>
-<td>⚠️ MEJORA PENDIENTE</td>
+<td>✅ IMPLEMENTADO</td>
 </tr>
 <tr>
 <td>IE3</td>
 <td>Limits CPU/MEM</td>
-<td>⚠️ MEJORA PENDIENTE</td>
+<td>✅ IMPLEMENTADO</td>
 </tr>
 <tr>
 <td>IE3</td>
 <td>Reservations CPU/MEM</td>
-<td>⚠️ MEJORA PENDIENTE</td>
+<td>✅ IMPLEMENTADO</td>
 </tr>
 <tr>
 <td>IE4</td>
@@ -513,18 +476,15 @@ jacoco, jacocoTestReport, jacocoTestCoverageVerification, toolVersion, minimum =
 </code></pre>
 <h3>IE5 - Healthchecks</h3>
 <ul>
-<li><p>Estado: ⚠️ MEJORA PENDIENTE</p>
+<li><p>Estado: ✅ IMPLEMENTADO</p>
 </li>
-<li><p>Detalle: No tiene healthchecks</p>
+<li><p>Detalle: Tiene healthchecks</p>
 </li>
 <li><p>Evidencia:</p>
 </li>
 </ul>
 <pre><code>docker-compose revisado
 </code></pre>
-<ul>
-<li>Qué falta: Agregar healthchecks</li>
-</ul>
 <h3>IE5 - Volumes</h3>
 <ul>
 <li><p>Estado: ✅ IMPLEMENTADO</p>
@@ -538,46 +498,37 @@ jacoco, jacocoTestReport, jacocoTestCoverageVerification, toolVersion, minimum =
 </code></pre>
 <h3>IE5 - Networks</h3>
 <ul>
-<li><p>Estado: ⚠️ MEJORA PENDIENTE</p>
+<li><p>Estado: ✅ IMPLEMENTADO</p>
 </li>
-<li><p>Detalle: No tiene networks</p>
+<li><p>Detalle: Tiene networks</p>
 </li>
 <li><p>Evidencia:</p>
 </li>
 </ul>
 <pre><code>docker-compose revisado
 </code></pre>
-<ul>
-<li>Qué falta: Agregar networks</li>
-</ul>
 <h3>IE3 - Limits CPU/MEM</h3>
 <ul>
-<li><p>Estado: ⚠️ MEJORA PENDIENTE</p>
+<li><p>Estado: ✅ IMPLEMENTADO</p>
 </li>
-<li><p>Detalle: No tiene limits</p>
+<li><p>Detalle: Tiene limits</p>
 </li>
 <li><p>Evidencia:</p>
 </li>
 </ul>
 <pre><code>docker-compose revisado
 </code></pre>
-<ul>
-<li>Qué falta: Agregar deploy.resources.limits</li>
-</ul>
 <h3>IE3 - Reservations CPU/MEM</h3>
 <ul>
-<li><p>Estado: ⚠️ MEJORA PENDIENTE</p>
+<li><p>Estado: ✅ IMPLEMENTADO</p>
 </li>
-<li><p>Detalle: No tiene reservations</p>
+<li><p>Detalle: Tiene reservations</p>
 </li>
 <li><p>Evidencia:</p>
 </li>
 </ul>
 <pre><code>docker-compose revisado
 </code></pre>
-<ul>
-<li>Qué falta: Agregar reservations</li>
-</ul>
 <h3>IE4 - README documentado</h3>
 <ul>
 <li><p>Estado: ✅ IMPLEMENTADO</p>
