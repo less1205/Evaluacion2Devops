@@ -1,0 +1,23 @@
+name: CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Construir imagen Docker
+        run: docker build -t evaluacion2devops .
+
+      - name: Levantar contenedores
+        run: docker compose up -d
+
+      - name: Verificar despliegue
+        run: docker ps
