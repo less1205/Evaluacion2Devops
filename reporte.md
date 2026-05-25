@@ -7,7 +7,6 @@ Las siguientes mejoras ayudarán a incrementar la madurez DevOps del repositorio
 ### 🟠 Prioridad media
 
 - SonarCloud/Snyk
-- Coverage equivalente JaCoCo
 
 ---
 
@@ -16,7 +15,6 @@ Las siguientes mejoras ayudarán a incrementar la madurez DevOps del repositorio
 1. SonarCloud/Snyk
 2. Bloqueos seguridad needs
 3. Deploy automático
-4. Coverage equivalente JaCoCo
 
 ---
 
@@ -37,23 +35,6 @@ Impacto: No existe análisis automatizado seguridad.
 
 - name: SonarCloud Scan
   uses: SonarSource/sonarcloud-github-action@master
-
-```
-
-### Coverage equivalente JaCoCo
-
-Impacto: No existe medición de cobertura.
-
-#### Cómo resolver
-
-- Agregar coverage
-- Publicar cobertura pipeline
-
-#### Ejemplo
-
-```
-
-npm test -- --coverage
 
 ```
 
@@ -102,7 +83,7 @@ npm test -- --coverage
 | IE3 | Bloqueos seguridad needs | ⚠️ MEJORA PENDIENTE |
 | IE4 | Deploy automático | ⚠️ MEJORA PENDIENTE |
 | IE2 | Tecnología detectada | ✅ IMPLEMENTADO |
-| IE2 | Coverage equivalente JaCoCo | ⚠️ MEJORA PENDIENTE |
+| IE2 | Coverage equivalente JaCoCo | ✅ IMPLEMENTADO |
 | IE3 | Dependabot configurado | ✅ IMPLEMENTADO |
 | IE5 | Docker Compose/K8s | ✅ IMPLEMENTADO |
 | IE5 | Múltiples servicios | ✅ IMPLEMENTADO |
@@ -236,8 +217,8 @@ Archivos proyecto
 
 ### IE2 - Coverage equivalente JaCoCo
 
-- Estado: ⚠️ MEJORA PENDIENTE
-- Detalle: Coverage NO detectado para java
+- Estado: ✅ IMPLEMENTADO
+- Detalle: Coverage detectado para java
 
 - Evidencia:
 ```
@@ -251,8 +232,6 @@ Keywords:
 jacoco, jacocoTestReport, jacocoTestCoverageVerification, toolVersion, minimum =, violationRules
       
 ```
-
-- Qué falta: Agregar JaCoCo
 
 
 ### IE3 - Dependabot configurado
