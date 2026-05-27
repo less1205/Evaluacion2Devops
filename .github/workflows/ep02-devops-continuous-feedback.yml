@@ -38,25 +38,13 @@ jobs:
 
     steps:
 
-      # ==========================================================
-      # CHECKOUT
-      # ==========================================================
-
       - name: Checkout repositorio
         uses: actions/checkout@v4
-
-      # ==========================================================
-      # NODE
-      # ==========================================================
 
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-
-      # ==========================================================
-      # DESCARGAR EVALUADOR CENTRAL
-      # ==========================================================
 
       - name: Descargar evaluador
         run: |
@@ -64,34 +52,18 @@ jobs:
           https://raw.githubusercontent.com/mauriciovelasquezduoc/2026-01-INGENIERIA-DEVOPS/main/ep02/evaluar.js \
           -o evaluar.js
 
-      # ==========================================================
-      # VALIDAR DESCARGA
-      # ==========================================================
-
       - name: Verificar evaluador
         run: |
           ls -lh evaluar.js
           head -5 evaluar.js
 
-      # ==========================================================
-      # DEPENDENCIAS
-      # ==========================================================
-
       - name: Instalar dependencias evaluador
         run: |
           npm install fs-extra js-yaml glob marked
 
-      # ==========================================================
-      # EJECUTAR AUTOEVALUACION
-      # ==========================================================
-
       - name: Ejecutar feedback DevOps
         run: |
           node evaluar.js
-
-      # ==========================================================
-      # GENERAR HTML
-      # ==========================================================
 
       - name: Generar reporte HTML
         run: |
@@ -117,49 +89,6 @@ jobs:
           DevOps Continuous Feedback
           </title>
 
-          <style>
-
-          body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            background: #f5f5f5;
-            color: #222;
-          }
-
-          h1, h2, h3 {
-            color: #111;
-          }
-
-          table {
-            border-collapse: collapse;
-            width: 100%;
-            background: white;
-          }
-
-          th, td {
-            border: 1px solid #ccc;
-            padding: 10px;
-            text-align: left;
-          }
-
-          th {
-            background: #222;
-            color: white;
-          }
-
-          code {
-            background: #eee;
-            padding: 2px 4px;
-          }
-
-          pre {
-            background: #eee;
-            padding: 15px;
-            overflow-x: auto;
-          }
-
-          </style>
-
           </head>
 
           <body>
@@ -182,17 +111,9 @@ jobs:
 
           node convertir-html.js
 
-      # ==========================================================
-      # PUBLICAR SUMMARY EN BROWSER
-      # ==========================================================
-
       - name: Publicar reporte en Summary
         run: |
           cat revision/reporte.md >> $GITHUB_STEP_SUMMARY
-
-      # ==========================================================
-      # PUBLICAR GITHUB PAGES
-      # ==========================================================
 
       - name: Publicar GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
@@ -200,19 +121,11 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./revision
 
-      # ==========================================================
-      # ARTIFACT OPCIONAL
-      # ==========================================================
-
       - name: Publicar artifact
         uses: actions/upload-artifact@v4
         with:
           name: devops-continuous-feedback
           path: revision/
-
-      # ==========================================================
-      # URL FINAL
-      # ==========================================================
 
       - name: Mostrar URL Pages
         run: |
@@ -225,7 +138,7 @@ jobs:
           echo "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
           echo ""
 
-    deploy:
+  deploy:
 
     needs: continuous-feedback
 
