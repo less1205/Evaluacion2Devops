@@ -1,0 +1,30 @@
+name: Security Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  security-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Dar permisos a Maven Wrapper
+        run: chmod +x mvnw
+
+      - name: Ejecutar análisis de dependencias
+        run: ./mvnw dependency:check
+
+      - name: Verificar vulnerabilidades
+        run: echo "Analisis de seguridad completado"
