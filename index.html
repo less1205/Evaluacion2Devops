@@ -9,49 +9,6 @@
 DevOps Continuous Feedback
 </title>
 
-<style>
-
-body {
-  font-family: Arial, sans-serif;
-  margin: 40px;
-  background: #f5f5f5;
-  color: #222;
-}
-
-h1, h2, h3 {
-  color: #111;
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-  background: white;
-}
-
-th, td {
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: left;
-}
-
-th {
-  background: #222;
-  color: white;
-}
-
-code {
-  background: #eee;
-  padding: 2px 4px;
-}
-
-pre {
-  background: #eee;
-  padding: 15px;
-  overflow-x: auto;
-}
-
-</style>
-
 </head>
 
 <body>
@@ -59,29 +16,6 @@ pre {
 <h1>DEVOPS CONTINUOUS FEEDBACK</h1>
 <h2>Resumen ejecutivo</h2>
 <p>Las siguientes mejoras ayudarán a incrementar la madurez DevOps del repositorio.</p>
-<h3>🟠 Prioridad media</h3>
-<ul>
-<li>SonarCloud/Snyk</li>
-</ul>
-<hr>
-<h2>Roadmap sugerido para alcanzar el 100%</h2>
-<ol>
-<li>SonarCloud/Snyk</li>
-</ol>
-<hr>
-<h2>Cómo resolver los GAPs</h2>
-<h3>SonarCloud/Snyk</h3>
-<p>Impacto: No existe análisis automatizado seguridad.</p>
-<h4>Cómo resolver</h4>
-<ul>
-<li>Integrar SonarCloud</li>
-<li>Integrar Snyk</li>
-</ul>
-<h4>Ejemplo</h4>
-<pre><code>
-- name: SonarCloud Scan
-  uses: SonarSource/sonarcloud-github-action@master
-</code></pre>
 <hr>
 <h2>Tabla evaluación</h2>
 <table>
@@ -211,7 +145,7 @@ pre {
 <tr>
 <td>IE3</td>
 <td>SonarCloud/Snyk</td>
-<td>⚠️ MEJORA PENDIENTE</td>
+<td>✅ IMPLEMENTADO</td>
 </tr>
 <tr>
 <td>IE3</td>
@@ -329,12 +263,12 @@ pre {
 <ul>
 <li><p>Estado: ✅ IMPLEMENTADO</p>
 </li>
-<li><p>Detalle: 1 workflow(s) detectados</p>
+<li><p>Detalle: 4 workflow(s) detectados</p>
 </li>
 <li><p>Evidencia:</p>
 </li>
 </ul>
-<pre><code>/home/runner/work/Evaluacion2Devops/Evaluacion2Devops/.github/workflows/ep02-devops-continuous-feedback.yml
+<pre><code>/home/runner/work/Evaluacion2Devops/Evaluacion2Devops/.github/workflows/security.yml, /home/runner/work/Evaluacion2Devops/Evaluacion2Devops/.github/workflows/ep02-devops-continuous-feedback.yml, /home/runner/work/Evaluacion2Devops/Evaluacion2Devops/.github/workflows/deploy.yml, /home/runner/work/Evaluacion2Devops/Evaluacion2Devops/.github/workflows/ci.yml
 </code></pre>
 <h3>IE2 - Pipeline ejecuta tests</h3>
 <ul>
@@ -349,18 +283,15 @@ pre {
 </code></pre>
 <h3>IE3 - SonarCloud/Snyk</h3>
 <ul>
-<li><p>Estado: ⚠️ MEJORA PENDIENTE</p>
+<li><p>Estado: ✅ IMPLEMENTADO</p>
 </li>
-<li><p>Detalle: No tiene seguridad</p>
+<li><p>Detalle: Tiene seguridad</p>
 </li>
 <li><p>Evidencia:</p>
 </li>
 </ul>
 <pre><code>Workflow revisado
 </code></pre>
-<ul>
-<li>Qué falta: Agregar Sonar/Snyk</li>
-</ul>
 <h3>IE3 - Bloqueos seguridad needs</h3>
 <ul>
 <li><p>Estado: ✅ IMPLEMENTADO</p>

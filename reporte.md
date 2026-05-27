@@ -4,38 +4,6 @@
 
 Las siguientes mejoras ayudarán a incrementar la madurez DevOps del repositorio.
 
-### 🟠 Prioridad media
-
-- SonarCloud/Snyk
-
----
-
-## Roadmap sugerido para alcanzar el 100%
-
-1. SonarCloud/Snyk
-
----
-
-## Cómo resolver los GAPs
-
-### SonarCloud/Snyk
-
-Impacto: No existe análisis automatizado seguridad.
-
-#### Cómo resolver
-
-- Integrar SonarCloud
-- Integrar Snyk
-
-#### Ejemplo
-
-```
-
-- name: SonarCloud Scan
-  uses: SonarSource/sonarcloud-github-action@master
-
-```
-
 ---
 
 ## Tabla evaluación
@@ -77,7 +45,7 @@ Impacto: No existe análisis automatizado seguridad.
 | IE1 | Docker build funciona | ✅ IMPLEMENTADO |
 | IE4 | Pipeline GitHub Actions | ✅ IMPLEMENTADO |
 | IE2 | Pipeline ejecuta tests | ✅ IMPLEMENTADO |
-| IE3 | SonarCloud/Snyk | ⚠️ MEJORA PENDIENTE |
+| IE3 | SonarCloud/Snyk | ✅ IMPLEMENTADO |
 | IE3 | Bloqueos seguridad needs | ✅ IMPLEMENTADO |
 | IE4 | Deploy automático | ✅ IMPLEMENTADO |
 | IE2 | Tecnología detectada | ✅ IMPLEMENTADO |
@@ -144,11 +112,11 @@ Dockerfile revisado
 ### IE4 - Pipeline GitHub Actions
 
 - Estado: ✅ IMPLEMENTADO
-- Detalle: 1 workflow(s) detectados
+- Detalle: 4 workflow(s) detectados
 
 - Evidencia:
 ```
-/home/runner/work/Evaluacion2Devops/Evaluacion2Devops/.github/workflows/ep02-devops-continuous-feedback.yml
+/home/runner/work/Evaluacion2Devops/Evaluacion2Devops/.github/workflows/security.yml, /home/runner/work/Evaluacion2Devops/Evaluacion2Devops/.github/workflows/ep02-devops-continuous-feedback.yml, /home/runner/work/Evaluacion2Devops/Evaluacion2Devops/.github/workflows/deploy.yml, /home/runner/work/Evaluacion2Devops/Evaluacion2Devops/.github/workflows/ci.yml
 ```
 
 
@@ -165,15 +133,13 @@ Workflow revisado
 
 ### IE3 - SonarCloud/Snyk
 
-- Estado: ⚠️ MEJORA PENDIENTE
-- Detalle: No tiene seguridad
+- Estado: ✅ IMPLEMENTADO
+- Detalle: Tiene seguridad
 
 - Evidencia:
 ```
 Workflow revisado
 ```
-
-- Qué falta: Agregar Sonar/Snyk
 
 
 ### IE3 - Bloqueos seguridad needs
